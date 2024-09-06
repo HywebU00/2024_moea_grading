@@ -1,0 +1,236 @@
+@import "_normalize"; //reset
+@import "_variable"; //variable
+
+body {
+  background: #f0f0f1;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+.loginWrap {
+  width: 100vw;
+  height: 100vh;
+  background: url(../images/login_bg5.png) center top -350px no-repeat,
+    url(../images/login_bg7.png) 80px 74% no-repeat,
+    url(../images/login_bg6.png) right -400px bottom -400px no-repeat;
+  .container {
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 140px;
+    position: relative;
+    box-sizing: border-box;
+    @media (max-width: 1200px) {
+      padding: 140px 100px;
+    }
+    @media (max-width: 1024px) {
+      padding: 140px 60px;
+    }
+    @media (max-width: 576px) {
+      padding: 140px 30px;
+    }
+    @media (max-width: 480px) {
+      padding: 30px 30px 100px 30px;
+    }
+    .deco {
+      position: absolute;
+      &.bg1 {
+        top: -280px;
+        right: -280px;
+        @media (max-width: 930px) {
+          top: -450px;
+          right: -350px;
+        }
+        @media (max-width: 480px) {
+          top: -450px;
+          right: -450px;
+        }
+        @media (max-width: 320px) {
+          top: -500px;
+          right: -500px;
+        }
+      }
+      &.bg2 {
+        top: 22%;
+        left: 2.3%;
+      }
+      &.bg3 {
+        bottom: 36%;
+        left: 33%;
+      }
+      &.bg4 {
+        bottom: 7.7%;
+        left: 43%;
+      }
+    }
+    .logo {
+      position: absolute;
+      left: 150px;
+      top: 70px;
+      @media (max-width: 1200px) {
+        left: 100px;
+      }
+      @media (max-width: 1024px) {
+        left: 60px;
+        top: 50px;
+      }
+      @media (max-width: 930px) {
+        top: 30px;
+      }
+      @media (max-width: 480px) {
+        position: relative;
+        top: auto;
+        left: auto;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      .enTitle {
+        font-size: 1.875rem;
+        color: $textColor;
+        margin-bottom: 0.5rem;
+        @media (max-width: 480px) {
+          font-size: 1.25rem;
+        }
+      }
+    }
+    .copyright {
+      position: absolute;
+      left: 150px;
+      bottom: 60px;
+      color: $textColor;
+      @media (max-width: 1200px) {
+        left: 100px;
+      }
+      @media (max-width: 1024px) {
+        left: 60px;
+      }
+      @media (max-width: 930px) {
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+      @media (max-width: 480px) {
+        position: relative;
+        bottom: auto;
+        margin-top: 1rem;
+      }
+    }
+    .loginBlock {
+      max-width: 1454px;
+      position: relative;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width: 930px) {
+        flex-direction: column;
+      }
+      h1 {
+        font-size: 5.625rem;
+        font-weight: bold;
+        color: #464646;
+        margin: 0 40px 0 0;
+        position: relative;
+        line-height: 120%;
+        @media (max-width: 1400px) {
+          font-size: 5rem;
+        }
+        @media (max-width: 1200px) {
+          font-size: 4rem;
+        }
+        @media (max-width: 930px) {
+          margin: 0 0 20px 0;
+          font-size: 3rem;
+        }
+        @media (max-width: 576px) {
+          font-size: 2.5rem;
+        }
+        @media (max-width: 480px) {
+          font-size: 2rem;
+        }
+        span {
+          display: block;
+          @media (max-width: 930px) {
+            display: none;
+          }
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          width: 86px;
+          height: 6px;
+          display: block;
+          background: #464646;
+          bottom: -40px;
+          left: 0;
+          @media (max-width: 930px) {
+            display: none;
+          }
+        }
+      }
+      .login {
+        padding: 100px;
+        box-sizing: border-box;
+        flex: 0 0 510px;
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 80px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1) inset;
+        @media (max-width: 1400px) {
+          padding: 80px;
+        }
+        @media (max-width: 1200px) {
+          padding: 60px;
+        }
+        @media (max-width: 930px) {
+          width: 100%;
+        }
+        .title {
+          font-size: 1.875rem;
+          font-weight: bold;
+          color: $textColor;
+          text-align: center;
+          letter-spacing: 2px;
+          margin-bottom: 40px;
+        }
+        .loginForm {
+          .formGrp {
+          }
+        }
+      }
+    }
+  }
+}
+.password {
+  position: relative;
+  input {
+    padding-right: 40px;
+  }
+  button.passwordEye {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    border: none;
+    color: transparent;
+    width: 26px !important;
+    height: 26px;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    font-size: 0;
+    &:before {
+      content: "";
+      width: 26px;
+      height: 26px;
+      display: block;
+      opacity: 0.8;
+    }
+    &.show:before {
+      background: url(../images/icon_eyeOpen.svg) center no-repeat;
+    }
+    &.hide:before {
+      background: url(../images/icon_eyeClose.svg) center no-repeat;
+    }
+  }
+}
