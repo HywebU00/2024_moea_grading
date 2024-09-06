@@ -223,6 +223,34 @@ body {
   overflow-x: hidden;
 }
 
+button {
+  border: 0;
+  border-radius: 40px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+button span {
+  position: relative;
+  color: #fff;
+  z-index: 1;
+}
+button:before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 -50px;
+  display: block;
+  background: rgb(159, 245, 255);
+  background: linear-gradient(37deg, rgb(159, 245, 255) 20%, rgb(143, 19, 222) 70%);
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+button:hover:before, button:focus:before {
+  inset: 0px;
+}
+
 .loginWrap {
   width: 100vw;
   height: 100vh;
@@ -233,7 +261,7 @@ body {
   max-width: 1920px;
   height: 100%;
   margin: 0 auto;
-  padding: 140px;
+  padding: 120px 140px;
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -255,7 +283,7 @@ body {
 }
 @media (max-width: 480px) {
   .loginWrap .container {
-    padding: 30px 30px 100px 30px;
+    padding: 30px;
   }
 }
 .loginWrap .container .deco {
@@ -445,9 +473,10 @@ body {
   }
 }
 .loginWrap .container .loginBlock .login {
-  padding: 100px;
+  padding: 80px 100px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  width: 510px;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 510px;
           flex: 0 0 510px;
@@ -457,6 +486,7 @@ body {
   border-radius: 80px;
   -webkit-box-shadow: 0 0 20px rgb(255, 255, 255) inset;
           box-shadow: 0 0 20px rgb(255, 255, 255) inset;
+  position: relative;
 }
 @media (max-width: 1400px) {
   .loginWrap .container .loginBlock .login {
@@ -473,21 +503,73 @@ body {
     width: 100%;
   }
 }
+.loginWrap .container .loginBlock .login:after {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 86px;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  background: transparent;
+  display: block;
+  z-index: -1;
+}
 .loginWrap .container .loginBlock .login .title {
   font-size: 1.875rem;
   font-weight: bold;
   color: #464646;
   text-align: center;
   letter-spacing: 2px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
-.password {
+.loginWrap .container .loginBlock .login .loginForm hr {
+  height: 2px;
+  background: #464646;
+  border: 0;
+  margin: 0;
+}
+.loginWrap .container .loginBlock .login .loginForm .formGrp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 12px 4px;
+}
+.loginWrap .container .loginBlock .login .loginForm .formGrp label {
+  font-size: 1.125rem;
+  margin-right: 30px;
+  color: #464646;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.loginWrap .container .loginBlock .login .loginForm .formGrp input {
+  height: 60px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  color: #464646;
+  border: 0;
+  background: transparent;
+  font-size: 1.125rem;
+}
+.loginWrap .container .loginBlock .login .loginForm .formGrp input:focus {
+  outline: none;
+}
+.loginWrap .container .loginBlock .login .loginForm .formGrp .password {
   position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
-.password input {
+.loginWrap .container .loginBlock .login .loginForm .formGrp .password input {
   padding-right: 40px;
 }
-.password button.passwordEye {
+.loginWrap .container .loginBlock .login .loginForm .formGrp .password button.passwordEye {
   padding: 0;
   margin: 0;
   position: absolute;
@@ -502,16 +584,78 @@ body {
   background: transparent;
   font-size: 0;
 }
-.password button.passwordEye:before {
+.loginWrap .container .loginBlock .login .loginForm .formGrp .password button.passwordEye:before {
   content: "";
   width: 26px;
   height: 26px;
   display: block;
   opacity: 0.8;
 }
-.password button.passwordEye.show:before {
+.loginWrap .container .loginBlock .login .loginForm .formGrp .password button.passwordEye.show:before {
   background: url(../images/icon_eyeOpen.svg) center no-repeat;
 }
-.password button.passwordEye.hide:before {
+.loginWrap .container .loginBlock .login .loginForm .formGrp .password button.passwordEye.hide:before {
   background: url(../images/icon_eyeClose.svg) center no-repeat;
+}
+.loginWrap .container .loginBlock .login .loginForm .formGrp .captcha {
+  width: 152px;
+  height: 48px;
+  overflow: hidden;
+  margin-right: 16px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.loginWrap .container .loginBlock .login .loginForm .formGrp .verification {
+  border: 1px solid #6a6868;
+  height: 44px;
+  width: 100px;
+  border-radius: 6px;
+  text-align: center;
+}
+.loginWrap .container .loginBlock .login .loginForm .formGrp .refresh,
+.loginWrap .container .loginBlock .login .loginForm .formGrp .sound {
+  padding: 8px 20px 8px 40px;
+  margin-top: -8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  color: #464646;
+}
+.loginWrap .container .loginBlock .login .loginForm .formGrp .refresh:hover,
+.loginWrap .container .loginBlock .login .loginForm .formGrp .sound:hover {
+  text-decoration: underline;
+  color: #7e13de;
+}
+.loginWrap .container .loginBlock .login .loginForm .formGrp .refresh {
+  background: url(../images/icon_refresh.png) 8px center no-repeat;
+}
+.loginWrap .container .loginBlock .login .loginForm .formGrp .sound {
+  background: url(../images/icon_sound.png) 8px center no-repeat;
+}
+.loginWrap .container .loginBlock .login .loginForm .error {
+  background: url(../images/icon_error.png) 0 center no-repeat;
+  padding: 4px 0 4px 24px;
+  color: #ff3380;
+  font-weight: bold;
+}
+.loginWrap .container .loginBlock .login .loginForm .btnGrp {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 12px;
+}
+.loginWrap .container .loginBlock .login .loginForm .btnGrp button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  height: 72px;
+  line-height: 72px;
+  font-size: 1.125rem;
 }/*# sourceMappingURL=style.css.map */

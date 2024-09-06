@@ -6,6 +6,40 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
+button {
+  border: 0;
+  border-radius: 40px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  span {
+    position: relative;
+    color: #fff;
+    z-index: 1;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 -50px;
+    display: block;
+    background: rgb(159, 245, 255);
+    background: linear-gradient(
+      37deg,
+      rgba(159, 245, 255, 1) 20%,
+      rgba(143, 19, 222, 1) 70%
+    );
+    transition: 0.5s all;
+  }
+  &:hover,
+  &:focus {
+    &:before {
+      inset: 0px;
+    }
+  }
+}
+
 .loginWrap {
   width: 100vw;
   height: 100vh;
@@ -17,7 +51,7 @@ body {
     max-width: 1920px;
     height: 100%;
     margin: 0 auto;
-    padding: 140px;
+    padding: 120px 140px;
     position: relative;
     box-sizing: border-box;
     @media (max-width: 1200px) {
@@ -30,7 +64,7 @@ body {
       padding: 140px 30px;
     }
     @media (max-width: 480px) {
-      padding: 30px 30px 100px 30px;
+      padding: 30px;
     }
     .deco {
       position: absolute;
@@ -169,13 +203,15 @@ body {
         }
       }
       .login {
-        padding: 100px;
+        padding: 80px 100px;
         box-sizing: border-box;
+        width: 510px;
         flex: 0 0 510px;
         backdrop-filter: blur(20px);
         background: rgba(255, 255, 255, 0.4);
         border-radius: 80px;
         box-shadow: 0 0 20px rgba(255, 255, 255, 1) inset;
+        position: relative;
         @media (max-width: 1400px) {
           padding: 80px;
         }
@@ -185,52 +221,142 @@ body {
         @media (max-width: 930px) {
           width: 100%;
         }
+        &:after {
+          content: "";
+          position: absolute;
+          inset: -12px;
+          border-radius: 86px;
+          box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+          background: transparent;
+          display: block;
+          z-index: -1;
+        }
         .title {
           font-size: 1.875rem;
           font-weight: bold;
           color: $textColor;
           text-align: center;
           letter-spacing: 2px;
-          margin-bottom: 40px;
+          margin-bottom: 20px;
         }
         .loginForm {
+          hr {
+            height: 2px;
+            background: $textColor;
+            border: 0;
+            margin: 0;
+          }
           .formGrp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 4px;
+            label {
+              font-size: 1.125rem;
+              margin-right: 30px;
+              color: $textColor;
+              font-weight: bold;
+              white-space: nowrap;
+            }
+            input {
+              height: 60px;
+              flex: 1 1 auto;
+              color: $textColor;
+              border: 0;
+              background: transparent;
+              font-size: 1.125rem;
+              &:focus {
+                outline: none;
+              }
+            }
+            .password {
+              position: relative;
+              flex-grow: 1;
+              input {
+                padding-right: 40px;
+              }
+              button.passwordEye {
+                padding: 0;
+                margin: 0;
+                position: absolute;
+                border: none;
+                color: transparent;
+                width: 26px !important;
+                height: 26px;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: transparent;
+                font-size: 0;
+                &:before {
+                  content: "";
+                  width: 26px;
+                  height: 26px;
+                  display: block;
+                  opacity: 0.8;
+                }
+                &.show:before {
+                  background: url(../images/icon_eyeOpen.svg) center no-repeat;
+                }
+                &.hide:before {
+                  background: url(../images/icon_eyeClose.svg) center no-repeat;
+                }
+              }
+            }
+            .captcha {
+              width: 152px;
+              height: 48px;
+              overflow: hidden;
+              margin-right: 16px;
+              flex-shrink: 0;
+            }
+            .verification {
+              border: 1px solid #6a6868;
+              height: 44px;
+              width: 100px;
+              border-radius: 6px;
+              text-align: center;
+            }
+            .refresh,
+            .sound {
+              padding: 8px 20px 8px 40px;
+              margin-top: -8px;
+              box-sizing: border-box;
+              text-decoration: none;
+              color: $textColor;
+              &:hover {
+                text-decoration: underline;
+                color: #7e13de;
+              }
+            }
+            .refresh {
+              background: url(../images/icon_refresh.png) 8px center no-repeat;
+            }
+            .sound {
+              background: url(../images/icon_sound.png) 8px center no-repeat;
+            }
+          }
+          .error {
+            background: url(../images/icon_error.png) 0 center no-repeat;
+            padding: 4px 0 4px 24px;
+            color: #ff3380;
+            font-weight: bold;
+          }
+          .btnGrp {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            button {
+              flex: 1 1 auto;
+              height: 72px;
+              line-height: 72px;
+              font-size: 1.125rem;
+            }
           }
         }
       }
-    }
-  }
-}
-.password {
-  position: relative;
-  input {
-    padding-right: 40px;
-  }
-  button.passwordEye {
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    border: none;
-    color: transparent;
-    width: 26px !important;
-    height: 26px;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    font-size: 0;
-    &:before {
-      content: "";
-      width: 26px;
-      height: 26px;
-      display: block;
-      opacity: 0.8;
-    }
-    &.show:before {
-      background: url(../images/icon_eyeOpen.svg) center no-repeat;
-    }
-    &.hide:before {
-      background: url(../images/icon_eyeClose.svg) center no-repeat;
     }
   }
 }

@@ -40,16 +40,16 @@
                     type="text"
                     placeholder="ACCOUNT"
                     title="請輸入帳號"
-                    class="error"
                   />
                 </div>
+                <hr />
                 <div class="formGrp">
                   <label for="password">密碼</label>
                   <div class="password">
                     <input
                       name="password"
                       type="password"
-                      placeholder="請輸入密碼"
+                      placeholder="PASSWORD"
                       title="請輸入密碼"
                     />
                     <button type="button" class="passwordEye hide">
@@ -57,6 +57,7 @@
                     </button>
                   </div>
                 </div>
+                <hr />
                 <div class="formGrp">
                   <img src="images/captcha.png" alt="" class="captcha" />
                   <input
@@ -65,22 +66,23 @@
                     value=""
                     placeholder="輸入驗證碼"
                     title="輸入驗證碼"
+                    class="verification"
                   />
                 </div>
-                <div class="btnGrp">
+                <div class="formGrp">
                   <a href="" class="refresh">重新整理</a>
                   <a href="" class="sound">語音播放</a>
                 </div>
-                <div class="notice">帳號或密碼輸入錯誤</div>
-                <div class="notice">驗證碼輸入錯誤</div>
+                <div class="error">帳號或密碼輸入錯誤</div>
+                <div class="error">驗證碼輸入錯誤</div>
                 <div class="btnGrp">
-                  <button type="button" class="btn">清除</button>
+                  <button type="button" class="btn"><span>清除</span></button>
                   <button
                     type="button"
                     class="btn submit"
                     onclick="window.location.href='02.kind.html'"
                   >
-                    登入
+                    <span>登入</span>
                   </button>
                 </div>
               </div>
