@@ -1,13 +1,13 @@
 @import "_normalize"; //reset
 @import "_variable"; //variable
 @import "_login"; //login
+@import "_score"; //score
 
 body {
   color: $textColor;
   background: #f0f0f1;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
-  height: 100vh;
 }
 .btn {
   border: 0;
@@ -51,6 +51,12 @@ select {
   border: 1px solid #bfbfbf;
   appearance: none;
   background: #fff url(../images/icon_arrowDown.png) right 20px center no-repeat;
+  @media (max-width: 1024px) {
+    font-size: 1.125rem;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 .container {
   width: 100%;
@@ -89,7 +95,16 @@ select {
     @media (max-width: 690px) {
       padding: 10px 0;
     }
-
+    &.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
     .container {
       display: flex;
       justify-content: space-between;
@@ -235,136 +250,6 @@ select {
           width: 150px;
           @media (max-width: 1200px) {
             width: 100px;
-          }
-        }
-      }
-    }
-  }
-}
-.scorePage {
-  .scoreSelect {
-    padding: 54px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 6px solid #464646;
-    label {
-      font-size: 1.5rem;
-      margin-right: 1rem;
-      font-weight: bold;
-    }
-  }
-  .scoreInfo {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding-top: 46px;
-    .infoTitle {
-      margin: 0 0 36px 0;
-      font-size: 2.25rem;
-      font-weight: bold;
-      text-align: center;
-    }
-    .infoText {
-      background: rgba(255, 255, 255, 0.32);
-      box-shadow: 0 9px 54px rgba(0, 0, 0, 0.24);
-      border-radius: 4px;
-      font-size: 1.125rem;
-      padding: 30px 120px;
-      box-sizing: border-box;
-      margin-bottom: 50px;
-      p {
-        margin-top: 0;
-      }
-      ol,
-      ul {
-        li {
-          margin-bottom: 0.5rem;
-        }
-      }
-    }
-    .infoSearch {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 44px;
-      label {
-        font-size: 1.5rem;
-        margin-right: 1rem;
-        font-weight: bold;
-      }
-      .search {
-        position: relative;
-        input[type="text"] {
-          font-size: 1.25rem;
-          line-height: 60px;
-          height: 60px;
-          padding: 0 60px 0 20px;
-          border-radius: 6px;
-          border: 1px solid #bfbfbf;
-          width: 388px;
-          box-sizing: border-box;
-        }
-        button {
-          width: 60px;
-          height: 60px;
-          display: block;
-          position: absolute;
-          right: 0;
-          top: 0;
-          color: transparent;
-          background: url(../images/icon_search.png) center no-repeat;
-          border: none;
-          font-size: 0;
-          z-index: 1;
-          &:active {
-            opacity: 0.6;
-          }
-        }
-      }
-    }
-    .infoSearchResult {
-      .function {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        font-size: 1.125rem;
-        .filter {
-          display: flex;
-          align-items: center;
-          column-gap: 18px;
-          font-weight: bold;
-          a {
-            padding: 0 40px;
-            height: 76px;
-            line-height: 76px;
-            border: 8px solid #f0f0f1;
-            text-decoration: none;
-            background: #fff;
-            border-radius: 70px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-            color: $textColor;
-            &.active {
-              border: 8px solid #fff;
-              background: rgb(176, 201, 248);
-              background: linear-gradient(
-                0deg,
-                rgba(176, 201, 248, 1) 0%,
-                rgba(143, 19, 222, 1) 55%
-              );
-              color: #fff;
-            }
-          }
-        }
-        .total {
-          .number {
-          }
-        }
-        .sort {
-          display: flex;
-          align-items: center;
-          label {
           }
         }
       }

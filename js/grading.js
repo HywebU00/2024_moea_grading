@@ -1,50 +1,46 @@
-/*-漢堡選單--------------------------------------------------- */
-// 獲取DOM元素
-const mobileMenu = document.querySelector('.mobileMenu');
-const menuList = document.querySelector('.menu');
-const menu = document.querySelector('.mainMenu');
+// 定義變數以儲存 header 高度
+let headerHeight = 0;
 
-// 用於儲存目前視窗寬度是否小於768px的狀態
-let isSmallScreen = window.innerWidth < 768;
-
-if (menuList) {
-  // 更新選單狀態（顯示或隱藏）的函式
-  const updateMenuState = () => {
-    if (isSmallScreen) {
-      // menuList.style.display = 'none';
-      // mobileMenu.style.display = 'flex';
-      menuList.classList.remove('show');
-    } else {
-      // menuList.style.display = 'flex';
-      // mobileMenu.style.display = 'none';
-      menuList.classList.remove('show');
-      menuList.style.maxHeight = ''; // 清除max-height屬性
-    }
-  };
-
-  // 監聽視窗大小的變化
-  window.addEventListener('resize', () => {
-    const newIsSmallScreen = window.innerWidth < 768;
-    if (isSmallScreen !== newIsSmallScreen) {
-      isSmallScreen = newIsSmallScreen;
-      updateMenuState();
-    }
-  });
-
-  // 點擊漢堡圖示，顯示或隱藏選單
-  mobileMenu.addEventListener('click', () => {
-    menuList.classList.toggle('show');
-    if (menuList.classList.contains('show')) {
-      // 動態計算選單的高度並應用到滑動效果上
-      menuList.style.maxHeight = menuList.scrollHeight + 'px';
-    } else {
-      menuList.style.maxHeight = '0';
-    }
-  });
-  updateMenuState();
+// 計算 header 高度的函式
+function updateHeaderHeight() {
+  var header = document.querySelector('.header');
+  headerHeight = header.offsetHeight;
 }
 
-// 初始化
+// 滾動時的處理函式
+function handleScroll() {
+  var header = document.querySelector('.header');
+  var wrap = document.querySelector('.wrap');
+
+  if (window.scrollY > headerHeight) {
+    header.classList.add('fixed');  // 新增 'fixed' class
+    wrap.style.paddingTop = headerHeight + 'px';  // 增加 padding-top
+  } else {
+    header.classList.remove('fixed');  // 移除 'fixed' class
+    wrap.style.paddingTop = '0';  // 將 padding-top 設回 0
+  }
+}
+
+// 初始化並綁定事件
+function init() {
+  // 在頁面載入時將捲軸位置重設為頂部
+  window.scrollTo(0, 0);
+
+  // 初次加載時計算 header 高度
+  updateHeaderHeight();
+
+  // 監聽滾動事件
+  window.addEventListener('scroll', handleScroll);
+
+  // 監聽視窗大小改變事件，重新計算 header 高度
+  window.addEventListener('resize', function() {
+    updateHeaderHeight();
+    handleScroll();  // 視窗調整大小後，立即根據滾動位置重新檢查
+  });
+}
+
+// 在 DOM 加載完成後執行初始化
+window.onload = init;
 
 /*-tab切換--------------------------------------------------- */
 

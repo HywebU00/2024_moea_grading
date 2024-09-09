@@ -34,7 +34,6 @@
 
 .loginWrap {
   width: 100vw;
-  height: 100vh;
   background: url(../images/login_bg5.png) center top -350px no-repeat,
     url(../images/login_bg7.png) 80px 74% no-repeat,
     url(../images/login_bg6.png) right -400px bottom -400px no-repeat;
@@ -129,7 +128,7 @@
     .copyright {
       position: relative;
       color: $textColor;
-      margin-top: 122px;
+      margin-top: 90px;
       @media (max-width: 1200px) {
         margin-top: 2rem;
       }
