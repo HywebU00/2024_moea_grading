@@ -42,31 +42,7 @@ function init() {
 // 在 DOM 加載完成後執行初始化
 window.onload = init;
 
-/*-tab切換--------------------------------------------------- */
 
-document.addEventListener('DOMContentLoaded', function () {
-  const tabs = document.querySelectorAll('.tab');
-  const tabContents = document.querySelectorAll('.tabContent');
-
-  if (tabs.length > 0) {
-    function clearActive() {
-      tabs.forEach((t) => t.classList.remove('active'));
-      tabContents.forEach((tc) => tc.classList.remove('active'));
-    }
-
-    tabs.forEach((tab, index) => {
-      tab.addEventListener('click', function () {
-        clearActive();
-        tab.classList.add('active');
-        tabContents[index].classList.add('active');
-      });
-    });
-
-    // 預設選中第一個頁籤
-    tabs[0].classList.add('active');
-    tabContents[0].classList.add('active');
-  }
-});
 
 /*-滾動表格--------------------------------------------------- */
 function scrollTables(obj) {
@@ -269,3 +245,85 @@ formEye({
 });
 
 
+function jsFadeIn(element, time) {
+  let ele = window.getComputedStyle(element);
+  let display = ele.display;
+  let speed = time || 200;
+
+  if (display === 'none') {
+    display = 'block';
+    let opacity = 0;
+    element.style.display = display;
+    element.style.opacity = 0;
+
+    element.style.transitionProperty = 'opacity';
+    element.style.transitionDuration = `${speed}ms`;
+    setTimeout(() => {
+      element.style.opacity = `1`;
+    }, 10);
+    setTimeout(() => {
+      element.style.display = 'block';
+      element.style.removeProperty('opacity');
+      element.style.removeProperty('transition-duration');
+      element.style.removeProperty('transition-property');
+    }, speed);
+  }
+}
+function jsFadeOut(element, time) {
+  let ele = window.getComputedStyle(element);
+  let display = ele.display;
+  let speed = time || 200;
+
+  if (display !== 'none') {
+    element.style.transitionProperty = 'opacity';
+    element.style.transitionDuration = `${speed}ms`;
+    setTimeout(() => {
+      element.style.opacity = `0`;
+    }, 10);
+    setTimeout(() => {
+      element.style.display = 'none';
+      element.style.removeProperty('opacity');
+      element.style.removeProperty('transition-duration');
+      element.style.removeProperty('transition-property');
+    }, speed);
+  }
+}
+function scrollToTop(obj) {
+  const el = document.querySelector(obj); // 控制的對象
+
+  function focusTopBtn() {
+    const top = window.scrollY;
+    if (top > 200) {
+      jsFadeIn(el);
+    } else {
+      jsFadeOut(el);
+    }
+  }
+
+  function scrollTop() {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
+
+  if (el) {
+    // window.scrollY 等於零的時候 執行 focus
+    window.addEventListener('scroll', focusTopBtn);
+
+    // 滑鼠點擊置頂按鈕
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollTop();
+    });
+
+    // 鍵盤點擊置頂按鈕
+    el.addEventListener('keydown', (e) => {
+      e.preventDefault();
+      scrollTop();
+    });
+  }
+}
+
+scrollToTop('.scrollToTop');

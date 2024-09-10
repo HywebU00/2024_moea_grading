@@ -1,0 +1,53 @@
+.tableWrapper {
+  & > .tableScroll {
+    // overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      display: block;
+      clear: both;
+      zoom: 1;
+      overflow: hidden;
+      overflow-x: auto;
+      padding-bottom: 1em;
+      -webkit-overflow-scrolling: touch;
+      -webkit-transform: translate3d(0, 0, 0);
+    }
+    & > table {
+      min-width: 600px;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        // display:none;
+        min-width: 600px;
+      }
+    }
+  }
+  .scrollTableNav {
+    width: 60px;
+    position: absolute;
+    transition: 0.5s opacity;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 9;
+  }
+  .scrollTableNavLeft {
+    left: 0;
+    display: none;
+  }
+  .scrollTableNavRight {
+    right: 0;
+    transform: rotateY(180deg);
+  }
+  .scrollTableNavLeft .scrollTableLeftBtn,
+  .scrollTableNavRight .scrollTableRightBtn {
+    width: 36px;
+    height: 100%;
+    background: url(../images/icon_arrow.svg) no-repeat center;
+    cursor: pointer;
+    background-size: 36px;
+  }
+}
