@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -1520,7 +1521,7 @@ th {
 body {
   color: #464646;
   background: #f0f0f1;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Lato, "PingFang TC", "Helvetica Neue", Helvetica, 微軟正黑體, Arial, Microsoft JhengHei, sans-serif;
   overflow-x: hidden;
   height: 100%;
 }
@@ -1830,6 +1831,7 @@ h2.title {
   border-radius: 40px;
   -webkit-box-shadow: 0 0 20px rgb(255, 255, 255) inset;
           box-shadow: 0 0 20px rgb(255, 255, 255) inset;
+  position: relative;
 }
 @media (max-width: 1200px) {
   .wrap .header .container .nav .welcome {
