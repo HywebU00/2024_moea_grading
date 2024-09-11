@@ -909,6 +909,7 @@ th {
 @media (max-width: 768px) {
   .scorePage .scoreInfo .infoSearch .search input[type=text] {
     width: auto;
+    font-size: 1rem;
   }
 }
 @media (max-width: 480px) {
@@ -1371,6 +1372,11 @@ th {
     font-size: 1.25rem;
   }
 }
+@media (max-width: 768px) {
+  .scorePage .infoSearchResult .resultSection .resultBlock .resultBody .scoreBlock .scoreItem .score input {
+    font-size: 1rem;
+  }
+}
 @media (max-width: 460px) {
   .scorePage .infoSearchResult .resultSection .resultBlock .resultBody .scoreBlock .scoreItem .score input {
     width: 70px;
@@ -1575,6 +1581,7 @@ select {
 @media (max-width: 768px) {
   select {
     width: 100%;
+    font-size: 1rem;
   }
 }
 

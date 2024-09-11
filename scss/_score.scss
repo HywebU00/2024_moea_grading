@@ -143,6 +143,7 @@
           }
           @media (max-width: 768px) {
             width: auto;
+            font-size: 1rem;
           }
           @media (max-width: 480px) {
             width: 200px;
@@ -454,6 +455,9 @@
                     width: 80px;
                     padding: 0 10px;
                     font-size: 1.25rem;
+                  }
+                  @media (max-width: 768px) {
+                    font-size: 1rem;
                   }
                   @media (max-width: 460px) {
                     width: 70px;
