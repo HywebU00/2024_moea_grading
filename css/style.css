@@ -721,6 +721,11 @@ th {
   position: relative;
   min-height: 700px;
 }
+@media (max-width: 930px) {
+  .scorePage {
+    background: none;
+  }
+}
 .scorePage::before {
   content: "";
   position: absolute;
@@ -732,6 +737,11 @@ th {
   background: url(../images/inner_bg5.png) 0 0 no-repeat;
   z-index: -2;
 }
+@media (max-width: 930px) {
+  .scorePage::before {
+    display: none;
+  }
+}
 .scorePage::after {
   content: "";
   position: absolute;
@@ -742,6 +752,11 @@ th {
   height: 305px;
   background: url(../images/inner_bg6.png) 0 0 no-repeat;
   z-index: -2;
+}
+@media (max-width: 930px) {
+  .scorePage::after {
+    display: none;
+  }
 }
 .scorePage.scoreFinish::before, .scorePage.scoreFinish::after {
   display: none;
