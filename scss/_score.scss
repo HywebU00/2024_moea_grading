@@ -384,11 +384,10 @@
             border-bottom: 4px solid $textColor;
             padding: 30px 2.5%;
             display: flex;
-            // justify-content: space-between;
             flex-wrap: wrap;
             font-weight: bold;
-
             row-gap: 30px;
+            justify-content: center;
             @media (max-width: 1024px) {
               padding: 30px 0;
             }
