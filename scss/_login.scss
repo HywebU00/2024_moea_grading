@@ -129,6 +129,7 @@
       position: relative;
       color: $textColor;
       margin-top: 90px;
+      font-weight: bold;
       @media (max-width: 1200px) {
         margin-top: 2rem;
       }
@@ -319,6 +320,7 @@
               text-decoration: none;
               color: $textColor;
               white-space: nowrap;
+              font-weight: bold;
               &:hover {
                 text-decoration: underline;
                 color: #7e13de;
@@ -345,9 +347,6 @@
             gap: 12px;
             button {
               flex: 1 1 auto;
-              height: 72px;
-              line-height: 72px;
-              font-size: 1.125rem;
             }
           }
         }

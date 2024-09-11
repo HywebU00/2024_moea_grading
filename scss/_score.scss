@@ -472,11 +472,12 @@
           @media (max-width: 768px) {
             margin: 0;
           }
-          .title {
+          label {
             font-size: 1.375rem;
             font-weight: bold;
-            padding: 22px 0;
+            margin: 22px 0;
             text-align: center;
+            display: block;
           }
           textarea {
             width: 100%;
@@ -508,18 +509,15 @@
     }
     .btn {
       width: 200px;
-      font-size: 1.25rem;
       font-weight: bold;
       @media (max-width: 800px) {
         width: 180px;
       }
-      @media (max-width: 530px) {
-        font-size: 1rem;
-      }
       @media (max-width: 480px) {
         width: auto;
-        height: 60px;
-        line-height: 60px;
+      }
+      @media (max-width: 375px) {
+        padding: 0 18px;
       }
     }
   }
@@ -531,8 +529,6 @@
       margin-bottom: 1.5rem;
     }
     button {
-      height: 74px;
-      line-height: 74px;
       padding: 0 40px;
       font-size: 1.125rem;
     }

@@ -427,6 +427,7 @@ th {
   position: relative;
   color: #464646;
   margin-top: 90px;
+  font-weight: bold;
 }
 @media (max-width: 1200px) {
   .loginWrap .container .copyright {
@@ -676,6 +677,7 @@ th {
   text-decoration: none;
   color: #464646;
   white-space: nowrap;
+  font-weight: bold;
 }
 .loginWrap .container .loginBlock .login .loginForm .formGrp .refresh:hover,
 .loginWrap .container .loginBlock .login .loginForm .formGrp .sound:hover {
@@ -711,9 +713,6 @@ th {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  height: 72px;
-  line-height: 72px;
-  font-size: 1.125rem;
 }
 
 .scorePage {
@@ -1390,11 +1389,12 @@ th {
     margin: 0;
   }
 }
-.scorePage .infoSearchResult .resultSection .resultBlock .resultFoot .title {
+.scorePage .infoSearchResult .resultSection .resultBlock .resultFoot label {
   font-size: 1.375rem;
   font-weight: bold;
-  padding: 22px 0;
+  margin: 22px 0;
   text-align: center;
+  display: block;
 }
 .scorePage .infoSearchResult .resultSection .resultBlock .resultFoot textarea {
   width: 100%;
@@ -1434,7 +1434,6 @@ th {
 }
 .scorePage .btnGrp .btn {
   width: 200px;
-  font-size: 1.25rem;
   font-weight: bold;
 }
 @media (max-width: 800px) {
@@ -1442,16 +1441,14 @@ th {
     width: 180px;
   }
 }
-@media (max-width: 530px) {
-  .scorePage .btnGrp .btn {
-    font-size: 1rem;
-  }
-}
 @media (max-width: 480px) {
   .scorePage .btnGrp .btn {
     width: auto;
-    height: 60px;
-    line-height: 60px;
+  }
+}
+@media (max-width: 375px) {
+  .scorePage .btnGrp .btn {
+    padding: 0 18px;
   }
 }
 .scorePage .finish {
@@ -1463,8 +1460,6 @@ th {
   margin-bottom: 1.5rem;
 }
 .scorePage .finish button {
-  height: 74px;
-  line-height: 74px;
   padding: 0 40px;
   font-size: 1.125rem;
 }
@@ -1541,6 +1536,17 @@ body {
   height: 74px;
   line-height: 74px;
   padding: 0 20px;
+  font-size: 1.125rem;
+  font-size: 1.125rem;
+  display: inline-block;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .btn {
+    height: 60px;
+    line-height: 60px;
+    font-size: 1rem;
+  }
 }
 .btn span {
   position: relative;
@@ -1847,8 +1853,6 @@ h2.title {
   z-index: -1;
 }
 .wrap .header .container .nav .btn {
-  height: 74px;
-  line-height: 74px;
   width: 150px;
 }
 @media (max-width: 1200px) {
@@ -1859,8 +1863,6 @@ h2.title {
 @media (max-width: 480px) {
   .wrap .header .container .nav .btn {
     width: 80px;
-    height: 60px;
-    line-height: 60px;
   }
 }
 .wrap .footer {
@@ -2017,9 +2019,11 @@ h2.title {
 .listPage .listTable table td {
   border-bottom: 1px solid #4c4c4c;
 }
-.listPage .listTable table td button {
+.listPage .listTable table td .btn {
   white-space: nowrap;
   padding: 0 30px;
+  cursor: pointer;
+  text-decoration: none;
 }
 .listPage .listTable table tr:last-child td {
   border-bottom: 0;
@@ -2073,6 +2077,8 @@ h2.title {
           justify-content: center;
   text-align: center;
   min-height: 112px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 @media (max-width: 930px) {
   .nodePage .nodeList a {
@@ -2088,8 +2094,10 @@ h2.title {
             flex: 0 1 100%;
   }
 }
-.nodePage .nodeList a:hover {
+.nodePage .nodeList a:hover, .nodePage .nodeList a:focus {
   background: -webkit-gradient(linear, left bottom, left top, from(rgb(176, 201, 248)), color-stop(55%, rgb(143, 19, 222)));
   background: linear-gradient(0deg, rgb(176, 201, 248) 0%, rgb(143, 19, 222) 55%);
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.3);
   color: #fff;
 }/*# sourceMappingURL=style.css.map */

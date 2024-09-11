@@ -1,3 +1,5 @@
+/*-fixed Header-------------------------------------------*/
+
 // 定義變數以儲存 header 高度
 let headerHeight = 0;
 
@@ -22,7 +24,7 @@ function handleScroll() {
 }
 
 // 初始化並綁定事件
-function init() {
+function fixedHeader() {
   // 在頁面載入時將捲軸位置重設為頂部
   window.scrollTo(0, 0);
 
@@ -40,7 +42,7 @@ function init() {
 }
 
 // 在 DOM 加載完成後執行初始化
-window.onload = init;
+window.onload = fixedHeader;
 
 
 
@@ -244,7 +246,7 @@ formEye({
   },
 });
 
-
+/*-scrollToTop--------------------------------------------------- */
 function jsFadeIn(element, time) {
   let ele = window.getComputedStyle(element);
   let display = ele.display;
