@@ -245,7 +245,8 @@
             padding: 12px 4px;
             label {
               font-size: 1.125rem;
-              margin-right: 30px;
+              width: 60px;
+              flex-shrink: 0;
               color: $textColor;
               font-weight: bold;
               white-space: nowrap;
@@ -312,41 +313,27 @@
               border-radius: 6px;
               text-align: center;
             }
-            .refresh,
-            .sound {
-              padding: 8px 20px 8px 40px;
-              margin-top: -8px;
-              box-sizing: border-box;
-              text-decoration: none;
-              color: $textColor;
-              white-space: nowrap;
-              font-weight: bold;
-              &:hover {
-                text-decoration: underline;
-                color: #7e13de;
-              }
-            }
-            .refresh {
-              background: url(../images/icon_refresh.png) 8px center no-repeat;
-            }
-            .sound {
-              background: url(../images/icon_sound.png) 8px center no-repeat;
-            }
-          }
-          .error {
-            background: url(../images/icon_error.png) 0 center no-repeat;
-            padding: 4px 0 4px 24px;
-            color: #ff3380;
-            font-weight: bold;
           }
           .btnGrp {
-            margin-top: 20px;
+            margin: 20px auto;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
             button {
               flex: 1 1 auto;
+            }
+          }
+          .forget {
+            text-align: center;
+            font-size: 1.125rem;
+            a {
+              text-decoration: none;
+              color: #551a8b;
+              &:hover,
+              &focus {
+                text-decoration: underline;
+              }
             }
           }
         }

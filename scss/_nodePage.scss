@@ -1,0 +1,47 @@
+.nodePage {
+  .nodeList {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5%;
+    row-gap: 40px;
+    @media (max-width: 640px) {
+      row-gap: 16px;
+    }
+    a {
+      text-decoration: none;
+      color: $textColor;
+      flex: 0 1 30%;
+      padding: 20px;
+      box-sizing: border-box;
+      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 80px;
+      font-size: 1.25rem;
+      font-weight: bold;
+      border: 8px solid #f0f0f1;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 112px;
+      transition: all 0.5s;
+      @media (max-width: 930px) {
+        flex: 0 1 45%;
+      }
+      @media (max-width: 640px) {
+        flex: 0 1 100%;
+      }
+      &:hover,
+      &:focus {
+        background: linear-gradient(
+          0deg,
+          rgb(176, 201, 248) 0%,
+          rgb(143, 19, 222) 55%
+        );
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.3);
+        color: #fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.listPage {
+  .listTable {
+    width: 100%;
+    padding: 30px 60px;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 8px;
+    color: $textColor;
+    margin-bottom: 30px;
+    position: relative;
+    font-size: 1.125rem;
+    @media (max-width: 768px) {
+      padding: 30px;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: 12px;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+      background: transparent;
+      display: block;
+      z-index: -1;
+    }
+    .tableWrapper {
+      width: 100%;
+    }
+    table {
+      width: 100%;
+      th,
+      td {
+        padding: 10px;
+      }
+      th {
+        border-bottom: 4px solid $textColor;
+        font-size: 1.25rem;
+      }
+      td {
+        border-bottom: 1px solid #4c4c4c;
+        .btn {
+          white-space: nowrap;
+          padding: 0 30px;
+          cursor: pointer;
+          text-decoration: none;
+        }
+      }
+      tr:last-child td {
+        border-bottom: 0;
+      }
+      .center {
+        text-align: center;
+      }
+    }
+  }
+}
