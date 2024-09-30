@@ -1,0 +1,52 @@
+.forgetPage {
+  .forgetForm {
+    width: min(100%, 800px);
+    padding: 30px 100px;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 8px;
+    color: $textColor;
+    margin-bottom: 30px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.125rem;
+    @media (max-width: 768px) {
+      padding: 30px;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: 12px;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+      background: transparent;
+      display: block;
+      z-index: -1;
+    }
+    .hint {
+      color: #551a8b;
+      text-align: center;
+      margin: 8px 0;
+      font-weight: bold;
+    }
+    .formGrp {
+      label {
+        width: 80px;
+      }
+      input {
+        border: 1px solid #6a6868;
+        height: 44px;
+        border-radius: 6px;
+        padding: 0 10px;
+        box-sizing: border-box;
+      }
+    }
+    .btnGrp {
+      button {
+        flex: 0 1 auto;
+        padding: 0 40px;
+      }
+    }
+  }
+}
