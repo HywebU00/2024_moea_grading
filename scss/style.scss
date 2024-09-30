@@ -461,94 +461,20 @@ h2.title {
       font-weight: bold;
     }
     .formGrp {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 4px;
       label {
-        font-size: 1.125rem;
         width: 80px;
-        flex-shrink: 0;
-        color: $textColor;
-        font-weight: bold;
-        white-space: nowrap;
-        .must {
-          color: #ff3380;
-          margin-left: 4px;
-        }
       }
       input {
-        height: 60px;
-        flex: 1 1 auto;
-        color: $textColor;
         border: 1px solid #6a6868;
         height: 44px;
         border-radius: 6px;
-        font-size: 1.125rem;
-        width: 100%;
         padding: 0 10px;
         box-sizing: border-box;
-        &:focus {
-          outline: none;
-        }
-      }
-      .password {
-        position: relative;
-        flex-grow: 1;
-        input {
-          width: 100%;
-          padding-right: 60px;
-          box-sizing: border-box;
-        }
-        button.passwordEye {
-          padding: 0;
-          margin: 0;
-          position: absolute;
-          border: none;
-          color: transparent;
-          width: 26px !important;
-          height: 26px;
-          right: 15px;
-          top: 50%;
-          transform: translateY(-50%);
-          background: transparent;
-          font-size: 0;
-          &:before {
-            content: "";
-            width: 26px;
-            height: 26px;
-            display: block;
-            opacity: 0.8;
-          }
-          &.show:before {
-            background: url(../images/icon_eyeOpen.svg) center no-repeat;
-          }
-          &.hide:before {
-            background: url(../images/icon_eyeClose.svg) center no-repeat;
-          }
-        }
-      }
-      .captcha {
-        width: 152px;
-        height: 48px;
-        overflow: hidden;
-        margin-right: 16px;
-        flex-shrink: 0;
-      }
-      .verification {
-        border: 1px solid #6a6868;
-        height: 44px;
-        border-radius: 6px;
-        text-align: center;
       }
     }
     .btnGrp {
-      margin: 20px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
       button {
+        flex: 0 1 auto;
         padding: 0 40px;
       }
     }

@@ -1075,7 +1075,19 @@ h2.title {
   border: 0;
   margin: 0;
 }
-.loginWrap .container .loginBlock .login .loginForm .formGrp {
+.loginWrap .container .loginBlock .login .loginForm .forget {
+  text-align: center;
+  font-size: 1.125rem;
+}
+.loginWrap .container .loginBlock .login .loginForm .forget a {
+  text-decoration: none;
+  color: #551a8b;
+}
+.loginWrap .container .loginBlock .login .loginForm .forget a:hover, .loginWrap .container .loginBlock .login .loginForm .forget afocus {
+  text-decoration: underline;
+}
+
+.formGrp {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1087,7 +1099,7 @@ h2.title {
           justify-content: center;
   padding: 12px 4px;
 }
-.loginWrap .container .loginBlock .login .loginForm .formGrp label {
+.formGrp label {
   font-size: 1.125rem;
   width: 60px;
   -ms-flex-negative: 0;
@@ -1096,7 +1108,11 @@ h2.title {
   font-weight: bold;
   white-space: nowrap;
 }
-.loginWrap .container .loginBlock .login .loginForm .formGrp input {
+.formGrp label .must {
+  color: #ff3380;
+  margin-left: 4px;
+}
+.formGrp input {
   height: 60px;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -1107,22 +1123,22 @@ h2.title {
   font-size: 1.125rem;
   width: 100%;
 }
-.loginWrap .container .loginBlock .login .loginForm .formGrp input:focus {
+.formGrp input:focus {
   outline: none;
 }
-.loginWrap .container .loginBlock .login .loginForm .formGrp .password {
+.formGrp .password {
   position: relative;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
-.loginWrap .container .loginBlock .login .loginForm .formGrp .password input {
+.formGrp .password input {
   width: 100%;
-  padding-right: 60px;
+  padding-right: 50px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.loginWrap .container .loginBlock .login .loginForm .formGrp .password button.passwordEye {
+.formGrp .password button.passwordEye {
   padding: 0;
   margin: 0;
   position: absolute;
@@ -1137,20 +1153,20 @@ h2.title {
   background: transparent;
   font-size: 0;
 }
-.loginWrap .container .loginBlock .login .loginForm .formGrp .password button.passwordEye:before {
+.formGrp .password button.passwordEye:before {
   content: "";
   width: 26px;
   height: 26px;
   display: block;
   opacity: 0.8;
 }
-.loginWrap .container .loginBlock .login .loginForm .formGrp .password button.passwordEye.show:before {
+.formGrp .password button.passwordEye.show:before {
   background: url(../images/icon_eyeOpen.svg) center no-repeat;
 }
-.loginWrap .container .loginBlock .login .loginForm .formGrp .password button.passwordEye.hide:before {
+.formGrp .password button.passwordEye.hide:before {
   background: url(../images/icon_eyeClose.svg) center no-repeat;
 }
-.loginWrap .container .loginBlock .login .loginForm .formGrp .captcha {
+.formGrp .captcha {
   width: 152px;
   height: 48px;
   overflow: hidden;
@@ -1158,14 +1174,15 @@ h2.title {
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
-.loginWrap .container .loginBlock .login .loginForm .formGrp .verification {
+.formGrp .verification {
   border: 1px solid #6a6868;
   height: 44px;
   width: 100px;
   border-radius: 6px;
   text-align: center;
 }
-.loginWrap .container .loginBlock .login .loginForm .btnGrp {
+
+.btnGrp {
   margin: 20px auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1178,21 +1195,10 @@ h2.title {
           justify-content: center;
   gap: 12px;
 }
-.loginWrap .container .loginBlock .login .loginForm .btnGrp button {
+.btnGrp button {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-}
-.loginWrap .container .loginBlock .login .loginForm .forget {
-  text-align: center;
-  font-size: 1.125rem;
-}
-.loginWrap .container .loginBlock .login .loginForm .forget a {
-  text-decoration: none;
-  color: #551a8b;
-}
-.loginWrap .container .loginBlock .login .loginForm .forget a:hover, .loginWrap .container .loginBlock .login .loginForm .forget afocus {
-  text-decoration: underline;
 }
 
 .scorePage {
@@ -2164,116 +2170,20 @@ h2.title {
   margin: 8px 0;
   font-weight: bold;
 }
-.forgetPage .forgetForm .formGrp {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 12px 4px;
-}
 .forgetPage .forgetForm .formGrp label {
-  font-size: 1.125rem;
   width: 80px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  color: #464646;
-  font-weight: bold;
-  white-space: nowrap;
-}
-.forgetPage .forgetForm .formGrp label .must {
-  color: #ff3380;
-  margin-left: 4px;
 }
 .forgetPage .forgetForm .formGrp input {
-  height: 60px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  color: #464646;
   border: 1px solid #6a6868;
   height: 44px;
   border-radius: 6px;
-  font-size: 1.125rem;
-  width: 100%;
   padding: 0 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.forgetPage .forgetForm .formGrp input:focus {
-  outline: none;
-}
-.forgetPage .forgetForm .formGrp .password {
-  position: relative;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-.forgetPage .forgetForm .formGrp .password input {
-  width: 100%;
-  padding-right: 60px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-.forgetPage .forgetForm .formGrp .password button.passwordEye {
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  border: none;
-  color: transparent;
-  width: 26px !important;
-  height: 26px;
-  right: 15px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  background: transparent;
-  font-size: 0;
-}
-.forgetPage .forgetForm .formGrp .password button.passwordEye:before {
-  content: "";
-  width: 26px;
-  height: 26px;
-  display: block;
-  opacity: 0.8;
-}
-.forgetPage .forgetForm .formGrp .password button.passwordEye.show:before {
-  background: url(../images/icon_eyeOpen.svg) center no-repeat;
-}
-.forgetPage .forgetForm .formGrp .password button.passwordEye.hide:before {
-  background: url(../images/icon_eyeClose.svg) center no-repeat;
-}
-.forgetPage .forgetForm .formGrp .captcha {
-  width: 152px;
-  height: 48px;
-  overflow: hidden;
-  margin-right: 16px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-.forgetPage .forgetForm .formGrp .verification {
-  border: 1px solid #6a6868;
-  height: 44px;
-  border-radius: 6px;
-  text-align: center;
-}
-.forgetPage .forgetForm .btnGrp {
-  margin: 20px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 12px;
-}
 .forgetPage .forgetForm .btnGrp button {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
   padding: 0 40px;
 }/*# sourceMappingURL=style.css.map */
