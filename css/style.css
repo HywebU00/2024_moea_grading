@@ -1839,6 +1839,9 @@ h2.title {
     white-space: nowrap;
   }
 }
+.scorePage .infoSearchResult .resultSection .resultBlock .resultBody .scoreBlock .scoreItem .score.hidden {
+  visibility: hidden;
+}
 .scorePage .infoSearchResult .resultSection .resultBlock .resultBody .scoreBlock .scoreItem .score input {
   width: 110px;
   line-height: 60px;
