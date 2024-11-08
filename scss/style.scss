@@ -105,7 +105,8 @@ h2.title {
   background: url(../images/login_bg5.png) center top -430px no-repeat,
     url(../images/login_bg7.png) 80px 74% no-repeat;
   .header {
-    padding: 60px 0 40px 0;
+    // padding: 60px 0 40px 0;
+    padding: 30px 0;
     background: url(../images/inner_bg3.png) 43% 140px no-repeat;
     @media (max-width: 1550px) {
       background: url(../images/inner_bg3.png) 50% 140px no-repeat;
@@ -120,6 +121,7 @@ h2.title {
       padding: 10px 0;
     }
     &.fixed {
+      padding: 10px 0;
       position: fixed;
       top: 0;
       left: 0;
@@ -128,6 +130,10 @@ h2.title {
       background: rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(20px);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      .logo {
+        transform: scale(0.8);
+        transform-origin: 0 30px;
+      }
     }
     .container {
       display: flex;
@@ -157,7 +163,8 @@ h2.title {
         height: 105px;
         display: block;
         background: url(../images/inner_bg2.png) 0 0 no-repeat;
-        top: 30px;
+        // top: 30px;
+        top: 20px;
         left: -150px;
         z-index: -1;
         @media (max-width: 1700px) {

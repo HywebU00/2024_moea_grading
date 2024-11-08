@@ -19,20 +19,20 @@
       display: none;
     }
   }
-  &::after {
-    content: "";
-    position: absolute;
-    left: -90px;
-    top: 2800px;
-    display: block;
-    width: 354px;
-    height: 305px;
-    background: url(../images/inner_bg6.png) 0 0 no-repeat;
-    z-index: -2;
-    @media (max-width: 930px) {
-      display: none;
-    }
-  }
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   left: -90px;
+  //   top: 2800px;
+  //   display: block;
+  //   width: 354px;
+  //   height: 305px;
+  //   background: url(../images/inner_bg6.png) 0 0 no-repeat;
+  //   z-index: -2;
+  //   @media (max-width: 930px) {
+  //     display: none;
+  //   }
+  // }
   &.scoreFinish {
     &::before,
     &::after {

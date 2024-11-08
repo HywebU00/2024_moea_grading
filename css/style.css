@@ -334,7 +334,7 @@ h2.title {
   background: url(../images/login_bg5.png) center top -430px no-repeat, url(../images/login_bg7.png) 80px 74% no-repeat;
 }
 .wrap .header {
-  padding: 60px 0 40px 0;
+  padding: 30px 0;
   background: url(../images/inner_bg3.png) 43% 140px no-repeat;
 }
 @media (max-width: 1550px) {
@@ -358,6 +358,7 @@ h2.title {
   }
 }
 .wrap .header.fixed {
+  padding: 10px 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -368,6 +369,12 @@ h2.title {
           backdrop-filter: blur(20px);
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.wrap .header.fixed .logo {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-transform-origin: 0 30px;
+          transform-origin: 0 30px;
 }
 .wrap .header .container {
   display: -webkit-box;
@@ -406,7 +413,7 @@ h2.title {
   height: 105px;
   display: block;
   background: url(../images/inner_bg2.png) 0 0 no-repeat;
-  top: 30px;
+  top: 20px;
   left: -150px;
   z-index: -1;
 }
@@ -1224,22 +1231,6 @@ h2.title {
 }
 @media (max-width: 930px) {
   .scorePage::before {
-    display: none;
-  }
-}
-.scorePage::after {
-  content: "";
-  position: absolute;
-  left: -90px;
-  top: 2800px;
-  display: block;
-  width: 354px;
-  height: 305px;
-  background: url(../images/inner_bg6.png) 0 0 no-repeat;
-  z-index: -2;
-}
-@media (max-width: 930px) {
-  .scorePage::after {
     display: none;
   }
 }
