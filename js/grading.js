@@ -329,3 +329,19 @@ function scrollToTop(obj) {
 }
 
 scrollToTop('.scrollToTop');
+
+
+document.querySelector('.switch').addEventListener('click', function () {
+  const leftBtn = document.querySelector('.leftBtn');
+  const switchBtn = this;
+
+  // 切換 open class
+  leftBtn.classList.toggle('open');
+
+  // 切換內文
+  if (leftBtn.classList.contains('open')) {
+    switchBtn.textContent = '展開';
+  } else {
+    switchBtn.textContent = '收合';
+  }
+});
