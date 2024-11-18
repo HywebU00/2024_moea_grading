@@ -531,13 +531,12 @@
     box-sizing: border-box;
     background: #222;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    left: -162px;
     transition: all 0.5s ease;
-    @media (max-width: 768px) {
-      left: -152px;
-    }
     &.open {
-      left: 0;
+      left: -162px;
+      @media (max-width: 768px) {
+        left: -152px;
+      }
     }
     .leftBlock {
       display: flex;

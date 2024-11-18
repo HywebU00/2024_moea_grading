@@ -1878,17 +1878,16 @@ h2.title {
   background: #222;
   -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-  left: -162px;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+.scorePage .leftBtn.open {
+  left: -162px;
+}
 @media (max-width: 768px) {
-  .scorePage .leftBtn {
+  .scorePage .leftBtn.open {
     left: -152px;
   }
-}
-.scorePage .leftBtn.open {
-  left: 0;
 }
 .scorePage .leftBtn .leftBlock {
   display: -webkit-box;
